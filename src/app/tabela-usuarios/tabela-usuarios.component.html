@@ -1,0 +1,18 @@
+<h3>{{titulo}}</h3>
+<table>
+  <tr>
+    <th>Codigo</th><th>Nome</th><th>Login</th><th>CPF</th><th>E-mail</th><th>Senha</th><th>Telefone</th><th>Editar</th><th>Remover</th>
+  </tr>
+  <tr *ngFor='let usuario of usuarios'>
+    <td>{{usuario.codigo}}</td>
+    <td>{{usuario.nome}}</td>
+    <td>{{usuario.login}}</td>
+    <td>{{usuario.cpf}}</td>
+    <td>{{usuario.email}}</td>
+    <td>{{usuario.senha}}</td>
+    <td>{{usuario.telefone}}</td>
+    <td><a [routerLink]="['/edicaoUsuario', usuario.codigo]">Editar</a></td>
+    <td><a routerLink="/listaUsuarios" (click)="remover(usuario)">Remover</a></td>
+  </tr>
+</table>
+<a routerLink="/novoUsuario">Novo usuário</a>

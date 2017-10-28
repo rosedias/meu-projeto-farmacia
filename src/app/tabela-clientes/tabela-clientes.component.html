@@ -1,0 +1,17 @@
+<h3>{{titulo}}</h3>
+<table>
+  <tr>
+    <th>Codigo</th><th>Nome</th><th>CPF</th><th>E-mail</th><th>endereço</th><th>Telefone</th><th>Editar</th><th>Remover</th>
+  </tr>
+  <tr *ngFor='let cliente of clientes'>
+    <td>{{cliente.codigo}}</td>
+    <td>{{cliente.nome}}</td>
+    <td>{{cliente.cpf}}</td>
+    <td>{{cliente.email}}</td>
+    <td>{{cliente.endereco}}</td>
+    <td>{{cliente.telefone}}</td>
+    <td><a [routerLink]="['/edicaoCliente', cliente.codigo]">Editar</a></td>
+    <td><a routerLink="/listaClientes" (click)="remover(cliente)">Remover</a></td>
+  </tr>
+</table>
+<a routerLink="/novoCliente">Novo Cliente</a>
